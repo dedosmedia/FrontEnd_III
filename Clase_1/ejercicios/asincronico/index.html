@@ -8,6 +8,10 @@
 </head>
 <body>
     <div id="root"></div>
+    <br>
+    <div id="root2"></div>
+
+
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script type="text/javascript">
@@ -27,6 +31,16 @@
         ReactDOM.render( div, document.getElementById("root"));
 
 
+        /*
+            Usando una función como componente
+        */
+        
+        function Componente(props){
+            return React.createElement("h1", null, "Hola mundo soy una función como componente y recibo "+props.saludo);
+        }
+
+        const props = { saludo: "otro saludo"};
+        ReactDOM.render( Componente(props), document.getElementById("root2"))
     
     </script>
 
