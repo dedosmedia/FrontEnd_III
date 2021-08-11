@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2</title>
+</head>
+<body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+    <div id="root2"></div>
+    <script type="text/babel">
+        
+        function Componente( {data}) {
+            console.log(data);
+
+            return (
+                <div>
+                    <h2> Listado de { data }</h2>
+                    <ul>
+                        <li key={1} data="test">soy</li>
+                        <li key={2}>una</li>
+                        <li key={3}>lista</li>
+                    </ul>
+                </div>
+            );
+        }
+
+        function Componente2(props) {
+            return React.createElement('h2', props, "Soy una etiqueta h2 con props");
+        }
+
+
+        ReactDOM.render(<Componente data={"prueba"+(1+1)}/>, document.getElementById("root"));
+        ReactDOM.render(Componente2({ data:"prueba"}), document.getElementById("root2"));
+
+    </script>
+</body>
+</html>
