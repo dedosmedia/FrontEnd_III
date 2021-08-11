@@ -36,10 +36,10 @@
         */
         
         function Componente(props){
-            return React.createElement("h1", null, "Hola mundo soy una función como componente y recibo "+props.saludo);
+            return React.createElement("h1", props, "Hola mundo soy una función como componente y tengo props (atributos en el HTML) ");
         }
 
-        const props = { saludo: "otro saludo"};
+        const props = { saludo: "otro saludo", data: 3, nombre:"hola"};
         ReactDOM.render( Componente(props), document.getElementById("root2"))
     
     </script>
