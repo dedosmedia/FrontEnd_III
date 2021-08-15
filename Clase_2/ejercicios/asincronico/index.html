@@ -15,12 +15,12 @@
     <div id="root2"></div>
     <script type="text/babel">
         
-        function Componente( {data}) {
+        function Componente( {data, children}) {
             console.log(data);
 
             return (
                 <div>
-                    <h2> Listado de { data }</h2>
+                    <h2> Listado de { data }. Children { children }</h2>
                     <ul>
                         <li key={1} data="test">soy</li>
                         <li key={2}>una</li>
@@ -35,8 +35,8 @@
         }
 
 
-        ReactDOM.render(<Componente data={"prueba"+(1+1)}/>, document.getElementById("root"));
-        ReactDOM.render(Componente2({ data:"prueba"}), document.getElementById("root2"));
+        ReactDOM.render(<Componente data={"prueba"+(1+1)}>Test</Componente>, document.getElementById("root"));
+        ReactDOM.render(React.createElement(Componente2, { data:"prueba"}), document.getElementById("root2"));
 
     </script>
 </body>
