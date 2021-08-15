@@ -40,7 +40,9 @@
         }
 
         const props = { saludo: "otro saludo", data: 3, nombre:"hola"};
-        ReactDOM.render( Componente(props), document.getElementById("root2"))
+
+        // Ojo: No pasar Componente(props) porque así no se crearía como componente
+        ReactDOM.render( React.createElement(Componente, props), document.getElementById("root2"))
     
     </script>
 
