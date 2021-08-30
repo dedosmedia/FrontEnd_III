@@ -10,6 +10,8 @@ export default class App extends Component {
   - Vamos a usar una funcion shuffle mas abajo y vamos a enviarla por props... que
     formas tenemos para no perder el contexto?
   */
+
+    datos = "Hola mundo";
   
     state = {
       colors: ["RED","BLUE","YELLOW", "GREEN","ORANGE","MAGENTA","BROWN","LIME"]
@@ -25,9 +27,13 @@ export default class App extends Component {
       */
 
       this.handleClick = this.handleClick.bind(this);
-
+      this.test();
     }
 
+    test(){
+      console.log(this.datos);
+
+    }
 
   /* ESPACIO DE TRABAJO
   Funcion Shuffle
@@ -63,8 +69,10 @@ export default class App extends Component {
 
   render() {
     return (
+      
       <div className="container">
         <div className="panel">
+          { console.log(this) }    
           {this.state.colors.map(color => <div key={color} className={color}>{color}</div>)}
         </div>
         <Button fn={this.handleClick} />

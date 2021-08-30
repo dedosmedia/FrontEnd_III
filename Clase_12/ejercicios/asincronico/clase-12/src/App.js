@@ -17,10 +17,10 @@ class Contador extends React.Component {
     console.log("El componente fue montado en el DOM");
   }
 
-  componentDidUpdate(prev, post) { 
+  componentDidUpdate(props, state) { 
     console.log("El componente fue actualizado");
-    console.log(prev);
-    console.log(post);
+    console.log(props);
+    console.log(state);
   }
 
 
